@@ -6,7 +6,9 @@ function Body() {
     <div className="w-full max-w-md p-6 rounded-lg bg-white bg-clip-padding flex flex-col items-center">
       <img className="rounded-md h-11 mt-4" src="/logo.png" alt="site logo" />
 
-      <h1 className="text-3xl font-bold mt-4">Password Generator</h1>
+      <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mt-4 ">
+        Password Generator
+      </h1>
 
       <p className="text-center text-gray-500 mt-2 text-sm">
         🔑 Treat your password like a toothbrush: 🪥 Dont let anybody else use
