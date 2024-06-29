@@ -21,7 +21,6 @@ import { PasswordDialog } from "./PasswordDialog";
 const formSchema = z.object({
   length: z.number().min(8).max(32),
   includeUppercase: z.boolean(),
-  includeLowercase: z.boolean(),
   includeNumbers: z.boolean(),
   includeSymbols: z.boolean(),
 });
@@ -36,7 +35,6 @@ export function PasswordGeneratorForm() {
     defaultValues: {
       length: 12,
       includeUppercase: true,
-      includeLowercase: true,
       includeNumbers: true,
       includeSymbols: false,
     },
@@ -96,25 +94,9 @@ export function PasswordGeneratorForm() {
                   />
                 </FormControl>
                 <div className="space-y-1 leading-none">
-                  <FormLabel className="w-4 h-4">Include Uppercase</FormLabel>
-                </div>
-              </FormItem>
-            )}
-          />
-
-          <FormField
-            control={form.control}
-            name="includeLowercase"
-            render={({ field }) => (
-              <FormItem className="flex flex-row items-start space-x-3 space-y-0">
-                <FormControl className="w-4 h-4">
-                  <Checkbox
-                    checked={field.value}
-                    onCheckedChange={field.onChange}
-                  />
-                </FormControl>
-                <div className="space-y-1 leading-none">
-                  <FormLabel className="w-4 h-4">Include Lowercase</FormLabel>
+                  <FormLabel className="w-4 h-4">
+                    Include Uppercase  (A-Z)
+                  </FormLabel>
                 </div>
               </FormItem>
             )}
@@ -132,7 +114,9 @@ export function PasswordGeneratorForm() {
                   />
                 </FormControl>
                 <div className="space-y-1 leading-none">
-                  <FormLabel className="w-4 h-4">Include Numbers</FormLabel>
+                  <FormLabel className="w-4 h-4">
+                    Include Numbers  (0-9)
+                  </FormLabel>
                 </div>
               </FormItem>
             )}
@@ -150,7 +134,9 @@ export function PasswordGeneratorForm() {
                   />
                 </FormControl>
                 <div className="space-y-1 leading-none">
-                  <FormLabel className="w-4 h-4">Include Symbols</FormLabel>
+                  <FormLabel className="w-4 h-4">
+                    Include Symbols  (!@#$%)
+                  </FormLabel>
                 </div>
               </FormItem>
             )}

@@ -12,11 +12,17 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { useToast } from "@/components/ui/use-toast";
 
 export function PasswordDialog({ password, isOpen, onClose }) {
+  const { toast } = useToast();
   const copyToClipboard = () => {
     navigator.clipboard.writeText(password);
-    // Optionally, you can add some feedback here, like a toast notification
+
+    toast({
+      title: "Password copied to clipboard",
+      description: "Your password has been copied to the clipboard.",
+    });
   };
 
   return (
